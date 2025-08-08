@@ -16,44 +16,43 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-emerald-300 shadow sticky top-0 z-50">
-      <div className="container mx-auto px-4 flex items-center justify-between h-16">
-        {/* Logo */}
+    <nav className="bg-emerald-700 shadow sticky top-0 z-50">
+      <div className="relative container mx-auto px-4 h-20 flex items-center justify-between">
+        {/* Logo - Left */}
         <Link
           to="/"
           onClick={close}
-          className="flex items-center space-x-2"
+          className="flex items-center space-x-2 z-10"
         >
-          <img src="/logo.jpg" alt="Emerald Logo" className="h-8 w-8" />
-          <span className="text-xl font-semibold text-emerald-600">
-            Emerald
-          </span>
-          <span className="text-gray-800">Screen Printing</span>
+          <img src="/logo_black.png" alt="Emerald Logo" className="h-12 w-15" />
+          <span className="text-xl font-semibold text-emerald-400">Emerald</span>
+          <span className="text-lg text-white font-medium">Screen Printing</span>
         </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6">
-          {links.map(({ name, to }) => (
-            <motion.div
-              key={name}
-              whileHover={{ scale: 1.1 }}
-              className="relative"
-            >
-              <Link
-                to={to}
-                className="text-gray-700 font-medium hover:text-black transition"
+        {/* Centered Links - Center */}
+        <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
+          <div className="hidden md:flex space-x-10 pointer-events-auto">
+            {links.map(({ name, to }) => (
+              <motion.div
+                key={name}
+                whileHover={{ scale: 1.05 }}
+                className="relative"
               >
-                {name}
-              </Link>
-              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-emerald-600 transition-all group-hover:w-full" />
-            </motion.div>
-          ))}
+                <Link
+                  to={to}
+                  className="text-lg text-white font-semibold hover:text-emerald-300 transition"
+                >
+                  {name}
+                </Link>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Hamburger - Right */}
         <button
           onClick={toggle}
-          className="md:hidden p-2 text-2xl text-gray-700 focus:outline-none"
+          className="md:hidden p-2 text-2xl text-white focus:outline-none z-10"
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
@@ -66,13 +65,13 @@ export default function Navbar() {
         transition={{ duration: 0.3 }}
         className="overflow-hidden bg-emerald-100 md:hidden"
       >
-        <div className="flex flex-col px-4 py-2 space-y-2">
+        <div className="flex flex-col items-center px-4 py-4 space-y-4 text-lg font-semibold">
           {links.map(({ name, to }) => (
             <Link
               key={name}
               to={to}
               onClick={close}
-              className="py-2 p-2 text-gray-700 font-medium hover:bg-emerald-200 rounded"
+              className="w-full text-center py-2 px-4 text-black hover:bg-emerald-200 rounded"
             >
               {name}
             </Link>

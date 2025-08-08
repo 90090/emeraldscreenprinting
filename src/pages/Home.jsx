@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -6,25 +7,34 @@ import { Autoplay, Pagination } from "swiper/modules";
 
 export default function Home() {
   const bannerImages = [
-    { src: "Premium-Presses.jpg", alt: "Our Equipment" },
-    { src: "Premium-Presses.jpg", alt: "Custom Apparel" },
-    { src: "Premium-Presses.jpg", alt: "Happy Clients" },
+    { src: "shoppic1.JPG", alt: "Our Equipment" },
+    { src: "shoppic2.jpg", alt: "Custom Apparel" },
+    { src: "shoppic3.jpg", alt: "Happy Clients" },
   ];
 
   const testimonials = [
     {
-      name: "Sarah K.",
-      text: "Emerald Screen Printing made our team shirts look incredible! Great quality and service.",
+      name: "Anthony",
+      company: "AJP Landscaping",
+      text: "Jeff has been making our apparel for years now and he never disappoints. He's easier to deal with than the larger companies and has the best pricing around.",
     },
     {
-      name: "Mike D.",
-      text: "Fast turnaround and the prints were flawless. Highly recommend them!",
+      name: "Jordan Tonn",
+      company: "Tonn’s Marketplace",
+      text: "I have worked with Jeff multiple times for custom shirts for my business and he has been amazing to work with. Very responsive and kept me informed throughout the entire process. He met every deadline and we couldn’t be happier with the shirts he made us. Will be doing more business with him in the future.",
     },
     {
-      name: "Emily P.",
-      text: "They helped me refine my design and it came out better than I imagined. Thank you!",
+      name: "Laura Dutil",
+      company: "Farmington High School Lacrosse and Football Booster Clubs",
+      text: "I have worked with Jeff, and the Emerald Screen Printing team, on a number of apparel projects for my son's high school sports teams, fundraising shirts and sweatshirts, and team shirts. Jeff's communication and attention to detail was great. I was very pleased with the collaboration in creating the design, the turnaround time, and the end product. Emerald Screen Printing is my go-to company.",
+    },
+    {
+      name: "Costello Landscaping",
+      company: "",
+      text: "Emerald was recommended to us from another contractor and we’ve been extremely happy with the t-shirt and sweatshirt quality! Not to mention probably the fastest turn around time we’ve ever had! Emerald is the absolute top of the line and we’re definitely a customer for life!",
     },
   ];
+
 
   return (
     <main className="space-y-16">
@@ -47,7 +57,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center text-white p-4">
                   <motion.img
-                    src="/logo.jpg"
+                    src="/logo_color.png"
                     alt="Emerald Logo"
                     className="w-24 mb-4"
                     initial={{ opacity: 0, y: -20 }}
@@ -87,34 +97,57 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-emerald-700">
           Emerald Screen Printing & Embroidery
         </h2>
-        <p className="max-w-2xl mx-auto text-gray-700">
+        <p className="mb-8 max-w-2xl mx-auto text-gray-700">
           Dynamic designs, high-quality printing, and exceptional customer service.  
           We print every piece with the care and precision we'd expect ourselves.
         </p>
+        <Link
+          to="/contact"
+          className="px-10 py-5 rounded-full bg-emerald-700 text-white font-semibold hover:bg-emerald-600 transition duration-300 shadow-md hover:shadow-lg"
+        >
+          Contact Today
+        </Link>
       </motion.section>
-
+        
       {/* Testimonials */}
       <motion.section
-        className="py-12"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="py-16"
       >
-        <div className="container mx-auto px-4 text-center space-y-8">
-          <h3 className="text-2xl font-bold text-emerald-600">What Our Clients Say</h3>
-          <div className="grid gap-6 md:grid-cols-3">
-            {testimonials.map((testimonial, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-lg shadow p-6 text-gray-700 space-y-4 transition-transform duration-300 hover:scale-[1.02]"
-              >
-                <p className="italic">“{testimonial.text}”</p>
-                <p className="font-semibold text-emerald-700">- {testimonial.name}</p>
-              </div>
+        <div className="container mx-auto px-4">
+          <h3 className="text-3xl font-semibold text-center text-emerald-600 mb-10">
+            What Our Clients Say
+          </h3>
+
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            pagination={{
+              clickable: true,
+              bulletClass: "swiper-pagination-bullet",
+              renderBullet: (i, className) =>
+                `<span class="${className} bg-emerald-600"></span>`,
+            }}
+            autoplay={{ delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true }}
+            loop={true}
+            className="max-w-4xl mx-auto"
+          >
+            {testimonials.map((t, i) => (
+              <SwiperSlide key={i}>
+                <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 md:p-10 shadow-sm transition-transform duration-300 hover:scale-[1.02]">
+                  <p className="text-gray-800 text-lg md:text-xl italic leading-relaxed mb-6">“{t.text}”</p>
+                  <div className="text-right">
+                    <p className="font-semibold text-emerald-600">— {t.name}</p>
+                    {t.company && <p className="text-gray-600 text-sm">{t.company}</p>}
+                  </div>
+                </div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </motion.section>
+
 
       {/* Slogan Section */}
       <motion.section
