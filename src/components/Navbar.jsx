@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -7,6 +7,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   const close = () => setIsOpen(false);
+
+  const location = useLocation();
 
   const links = [
     { name: "Home", to: "/" },
@@ -29,10 +31,11 @@ export default function Navbar() {
           <span className="text-lg text-white font-medium">Screen Printing</span>
         </Link>
 
-        {/* Centered Links - Center */}
-        <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
-          <div className="hidden md:flex space-x-10 pointer-events-auto">
-            {links.map(({ name, to }) => (
+        {/* Centered Links - Desktop (1024px and above) */}
+        <div className="hidden lg:flex space-x-10 absolute inset-0 justify-center items-center">
+          {links.map(({ name, to }) => {
+            const isActive = location.pathname === to;
+            return (
               <motion.div
                 key={name}
                 whileHover={{ scale: 1.05 }}
@@ -40,19 +43,23 @@ export default function Navbar() {
               >
                 <Link
                   to={to}
-                  className="text-lg text-white font-semibold hover:text-emerald-300 transition"
+                  className={`text-lg font-semibold transition ${
+                    isActive
+                      ? "text-emerald-300"
+                      : "text-white hover:text-emerald-300"
+                  }`}
                 >
                   {name}
                 </Link>
               </motion.div>
-            ))}
-          </div>
+            );
+          })}
         </div>
 
-        {/* Hamburger - Right */}
+        {/* Hamburger - Mobile (1023px and below) */}
         <button
           onClick={toggle}
-          className="md:hidden p-2 text-2xl text-white focus:outline-none z-10"
+          className="lg:hidden p-2 text-2xl text-white focus:outline-none z-10"
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
@@ -63,19 +70,26 @@ export default function Navbar() {
         initial={{ height: 0, opacity: 0 }}
         animate={isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
         transition={{ duration: 0.3 }}
-        className="overflow-hidden bg-emerald-100 md:hidden"
+        className="overflow-hidden bg-emerald-700 lg:hidden"
       >
         <div className="flex flex-col items-center px-4 py-4 space-y-4 text-lg font-semibold">
-          {links.map(({ name, to }) => (
-            <Link
-              key={name}
-              to={to}
-              onClick={close}
-              className="w-full text-center py-2 px-4 text-black hover:bg-emerald-200 rounded"
-            >
-              {name}
-            </Link>
-          ))}
+          {links.map(({ name, to }) => {
+            const isActive = location.pathname === to;
+            return (
+              <Link
+                key={name}
+                to={to}
+                onClick={close}
+                className={`w-full text-center py-2 px-4 rounded transition ${
+                  isActive
+                    ? "text-emerald-400"
+                    : "text-white hover:bg-emerald-200"
+                }`}
+              >
+                {name}
+              </Link>
+            );
+          })}
         </div>
       </motion.div>
     </nav>

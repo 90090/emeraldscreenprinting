@@ -1,39 +1,34 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Testimonials from "../components/Testimonials";
 
 export default function Home() {
   const bannerImages = [
     { src: "shoppic1.JPG", alt: "Our Equipment" },
-    { src: "shoppic2.jpg", alt: "Custom Apparel" },
-    { src: "shoppic3.jpg", alt: "Happy Clients" },
+    { src: "shoppic5.jpeg", alt: "Custom Apparel" },
+    { src: "shoppic4.JPG", alt: "Happy Clients" },
   ];
 
-  const testimonials = [
-    {
-      name: "Anthony",
-      company: "AJP Landscaping",
-      text: "Jeff has been making our apparel for years now and he never disappoints. He's easier to deal with than the larger companies and has the best pricing around.",
-    },
-    {
-      name: "Jordan Tonn",
-      company: "Tonn’s Marketplace",
-      text: "I have worked with Jeff multiple times for custom shirts for my business and he has been amazing to work with. Very responsive and kept me informed throughout the entire process. He met every deadline and we couldn’t be happier with the shirts he made us. Will be doing more business with him in the future.",
-    },
-    {
-      name: "Laura Dutil",
-      company: "Farmington High School Lacrosse and Football Booster Clubs",
-      text: "I have worked with Jeff, and the Emerald Screen Printing team, on a number of apparel projects for my son's high school sports teams, fundraising shirts and sweatshirts, and team shirts. Jeff's communication and attention to detail was great. I was very pleased with the collaboration in creating the design, the turnaround time, and the end product. Emerald Screen Printing is my go-to company.",
-    },
-    {
-      name: "Costello Landscaping",
-      company: "",
-      text: "Emerald was recommended to us from another contractor and we’ve been extremely happy with the t-shirt and sweatshirt quality! Not to mention probably the fastest turn around time we’ve ever had! Emerald is the absolute top of the line and we’re definitely a customer for life!",
-    },
+  const showcase = [
+    { img: "customers/dynamictree2.jpg", caption: "Dynamic Tree Service Crew" },
+    { img: "customers/allinone2.jpg", caption: "All In One Powerwashing" },
+    { img: "customers/dynamictrees.png", caption: "Dynamic Tree Service" },
+    { img: "customers/ajplandscaping.jpg", caption: "AJP Landscaping" },
+    { img: "customers/guitar.jpg", caption: "Sweet Magic" },
+    { img: "customers/ges.jpg", caption: "Green Earth Solutions" },
   ];
+  const clientLogos = [
+  { name: "Adell Landscaping", src: "logos/adell.png" },
+  { name: "Central CT Building and Remodeling", src: "logos/centralct.png" },
+  { name: "Ibirra Landscaping", src: "logos/ibarra.jpg" },
+  { name: "Canton Pizza", src: "logos/cantonpizza.png" },
+  { name: "Unionville Autobody", src: "logos/unionville.jpg" },
+  { name: "Spine Sports", src: "logos/spinesports-logo.png" },
+  { name: "Tonn's Marketplace", src: "logos/tonnsmarketplace.png" },
+  { name: "Valley Stump Grinding", src: "logos/valleystump.png" },
+];
 
 
   return (
@@ -42,7 +37,7 @@ export default function Home() {
       <section className="relative">
         <Swiper
           modules={[Autoplay, Pagination]}
-          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          autoplay={{ delay: 6000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           loop={true}
           className="h-[500px]"
@@ -56,19 +51,11 @@ export default function Home() {
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center text-white p-4">
-                  <motion.img
-                    src="/logo_color.png"
-                    alt="Emerald Logo"
-                    className="w-24 mb-4"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                  />
                   <motion.h1
                     className="text-4xl md:text-5xl font-extrabold text-emerald-400"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2, duration: 0.6 }}
+                    transition={{ delay: 0.2, duration: 0.9 }}
                   >
                     Screen Printing That Hits Different.
                   </motion.h1>
@@ -76,7 +63,7 @@ export default function Home() {
                     className="mt-4 text-lg md:text-xl max-w-xl"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.4, duration: 0.6 }}
+                    transition={{ delay: 0.4, duration: 0.9 }}
                   >
                     Bold designs. Impeccable detail. Personal touch. Always printed like it's our own.
                   </motion.p>
@@ -87,59 +74,107 @@ export default function Home() {
         </Swiper>
       </section>
 
-      {/* Mission Statement */}
+      {/* Mission + Slogan */}
       <motion.section
-        className="container mx-auto px-4 text-center space-y-4"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        className="bg-gray-50"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl font-bold text-emerald-700">
-          Emerald Screen Printing & Embroidery
-        </h2>
-        <p className="mb-8 max-w-2xl mx-auto text-gray-700">
-          Dynamic designs, high-quality printing, and exceptional customer service.  
-          We print every piece with the care and precision we'd expect ourselves.
-        </p>
-        <Link
+        <div className="container mx-auto px-4 text-center space-y-4">
+          <motion.img
+            src="/logo_color.png"
+            alt="Emerald Logo"
+            className="w-70 mb-4 mx-auto"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          />
+          <h2 className="text-3xl font-semibold text-emerald-600">
+            Your Local Screen Printing Partner
+          </h2>
+          <p className="mb-10 text-lg text-gray-700 max-w-2xl mx-auto">
+            We're a small, family-run shop rooted in community and craftsmanship. Every order is treated like it's ours, because to us, it is.
+          </p>
+          <Link
           to="/contact"
-          className="px-10 py-5 rounded-full bg-emerald-700 text-white font-semibold hover:bg-emerald-600 transition duration-300 shadow-md hover:shadow-lg"
+          className="px-10 py-5 rounded-full bg-emerald-700 text-white font-semibold hover:bg-emerald-600 transition transform hover:scale-105 duration-300 shadow-md hover:shadow-lg "
         >
           Contact Today
-        </Link>
+          </Link>
+        </div>
       </motion.section>
-        
-      {/* Testimonials */}
+
+      {/* Client List */}
+      <div className="relative overflow-hidden py-2">
+        <h3 className="text-2xl text-center font-bold mb-10 text-emerald-600">
+          Trusted By Many Connecticut Brands
+        </h3>
+        <div className="flex w-max gap-12 animate-marquee hover:md:animation-paused">
+          {/* one set */}
+          {clientLogos.map((c) => (
+            <div
+              key={c.name}
+              className="flex items-center justify-center w-38 h-17 md:w-50 md:h-20 bg-white rounded-xl shadow transition-transform duration-300 hover:scale-110"
+              title={c.name}
+            >
+              <img
+                src={c.src}
+                alt={c.name}
+                className="max-h-16 md:max-h-19 md:max-w-45 max-w-32 object-contain"
+              />
+            </div>
+          ))}
+          {/* duplicate set */}
+          {clientLogos.map((c, i) => (
+            <div
+              key={`${c.name}-dup-${i}`}
+              className="flex items-center justify-center w-32 h-14 md:w-50 md:h-20 bg-white rounded-xl shadow transition-transform duration-300 hover:scale-110"
+              aria-hidden="true"
+            >
+              <img
+                src={c.src}
+                alt=""
+                className="max-h-16 md:max-h-12 max-w-[180px] object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Apparel Showcase */}
       <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="py-16"
+        className="py-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        
       >
         <div className="container mx-auto px-4">
-          <h3 className="text-3xl font-semibold text-center text-emerald-600 mb-10">
-            What Our Clients Say
-          </h3>
-
           <Swiper
-            modules={[Pagination, Autoplay]}
-            pagination={{
-              clickable: true,
-              bulletClass: "swiper-pagination-bullet",
-              renderBullet: (i, className) =>
-                `<span class="${className} bg-emerald-600"></span>`,
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={1}
+            navigation
+            autoplay={{ delay: 6000, disableOnInteraction: false }}
+            loop={true} 
+            pagination={{ clickable: true }}
+            breakpoints={{
+              640: { slidesPerView: 2 }, // tablets
+              1024: { slidesPerView: 3 }, // desktops
             }}
-            autoplay={{ delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true }}
-            loop={true}
-            className="max-w-4xl mx-auto"
+            className="max-w-5xl mx-auto pb-20" 
           >
-            {testimonials.map((t, i) => (
-              <SwiperSlide key={i}>
-                <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 md:p-10 shadow-sm transition-transform duration-300 hover:scale-[1.02]">
-                  <p className="text-gray-800 text-lg md:text-xl italic leading-relaxed mb-6">“{t.text}”</p>
-                  <div className="text-right">
-                    <p className="font-semibold text-emerald-600">— {t.name}</p>
-                    {t.company && <p className="text-gray-600 text-sm">{t.company}</p>}
+            {showcase.map((item, idx) => (
+              <SwiperSlide key={idx}>
+                <div className="relative rounded-2xl overflow-hidden shadow-md hover:scale-101 transition-transform duration-300">
+                  <img
+                    src={item.img}
+                    alt={item.caption}
+                    className="w-full h-72 object-cover"
+                  />
+                  <div className="absolute bottom-0 left-0 w-full bg-black/50 text-white py-4 text-sm text-center">
+                    {item.caption}
                   </div>
                 </div>
               </SwiperSlide>
@@ -147,25 +182,8 @@ export default function Home() {
           </Swiper>
         </div>
       </motion.section>
-
-
-      {/* Slogan Section */}
-      <motion.section
-        className="bg-emerald-700 text-white pt-16 pb-20 md:pb-24"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="container mx-auto px-6 text-center space-y-6">
-          <h3 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Emerald Screen Printing & Embroidery
-          </h3>
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-emerald-100 leading-relaxed">
-            “We print like we're the customer. If we don't like it, we know you won't either.”
-          </p>
-        </div>
-      </motion.section>
-
+        
+      <Testimonials />
     </main>
   );
 }

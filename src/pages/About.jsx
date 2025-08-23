@@ -22,7 +22,7 @@ export default function About() {
             top-tier, and our reputation is built on quality and trust.
           </p>
           <p className="text-lg text-gray-600 mt-4">
-            We specialize in custom screen printing for apparel such as T-shirts, hoodies, and hats
+            We specialize in custom screen printing for apparel such as T-shirts, hoodies, caps
             and more. Offering creative support and a seamless ordering experience from start to
             finish, whether you're a small business, school, organization, or someone with a big
             idea, we print every item like it's our own.
@@ -55,7 +55,7 @@ export default function About() {
       >
         <h2 className="text-3xl font-bold text-emerald-600 mb-4">Proudly Local</h2>
         <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-          Emerald Screen Printing is a family-owned local business, deeply rooted in the Southington community. We take pride
+          Emerald Screen Printing is a family-owned local business, deeply rooted in the Farmington community. We take pride
           in treating every order with the same care and attention we'd want ourselves because for us, it's not just printing.
           It's personal.
         </p>
@@ -99,7 +99,7 @@ export default function About() {
             Jeff made a pivotal decision to build more and buy the equipment and print in-house.
           </p>
           <p>
-            Newly relocated to Southington, a backyard shed became the birthplace of a full-fledged print
+            Newly relocated to Farmington, a backyard shed became the birthplace of a full-fledged print
             operation. While working full-time at ESPN during the night shift (4 PM–12 AM), daytime hours
             were spent printing orders and building a loyal customer base.
           </p>

@@ -31,3 +31,23 @@ html {
   animation: slideInRight 0.8s ease-out;
 }
 
+@keyframes marquee-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* move one set width */
+}
+
+/* Apply marquee animation */
+.animate-marquee {
+  animation: marquee-x 30s linear infinite;
+  will-change: transform;
+}
+
+/* Pause on hover */
+.hover\:md\:animation-paused:hover {
+  animation-play-state: paused;
+}
+
+.swiper-pagination {
+  bottom: 0 !important;   /* anchors at bottom of swiper container */
+}
+

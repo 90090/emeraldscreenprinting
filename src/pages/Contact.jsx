@@ -37,15 +37,6 @@ export default function Contact() {
         transition={{ duration: 0.9 }}
         className="text-center space-y-2"
       >
-        <p className="text-lg text-gray-700">
-          📧{" "}
-          <a
-            href="mailto:info@emeraldscreenprinting.com"
-            className="text-emerald-700 font-semibold hover:underline"
-          >
-            info@emeraldscreenprinting.com
-          </a>
-        </p>
         <p className="text-sm text-gray-600">
           You'll hear back from me within 24 hours. Let's make it happen.
         </p>
