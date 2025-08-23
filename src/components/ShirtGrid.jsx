@@ -69,6 +69,7 @@ export default function ShirtGrid() {
               <img
                 src={img.src}
                 alt={img.alt}
+                loading="lazy"
                 className="w-full h-[150px] sm:h-[180px] md:h-[200px] object-contain bg-white"
               />
             </div>

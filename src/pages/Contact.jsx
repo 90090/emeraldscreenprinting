@@ -4,6 +4,10 @@ import { motion } from "framer-motion";
 export default function Contact() {
   return (
     <section className="container mx-auto px-4 py-16 max-w-3xl animate-fadeIn space-y-12">
+      <head>
+       <title>Contact Emerald Screen Printing</title>
+       <meta name="description" content="Get in touch with Emerald Screen Printing for quotes, orders, or questions. Contact us today to start your custom t-shirt or promotional product project." />
+      </head>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -15,7 +19,7 @@ export default function Contact() {
           Let's Create Something Together.
         </h2>
         <p className="text-gray-700 max-w-xl mx-auto">
-          Have a project in mind? Let us know what you're envisioning — we're ready to help bring
+          Have a project in mind? Let us know what you're envisioning, we're ready to help bring
           it to life on fabric.
         </p>
       </motion.div>
@@ -38,7 +42,7 @@ export default function Contact() {
         className="text-center space-y-2"
       >
         <p className="text-sm text-gray-600">
-          You'll hear back from me within 24 hours. Let's make it happen.
+          You'll hear back from me within 1 - 3 hours. Let's make it happen.
         </p>
       </motion.div>
     </section>

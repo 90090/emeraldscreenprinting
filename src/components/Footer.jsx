@@ -8,8 +8,6 @@ export default function Footer() {
         <div className="flex space-x-4 text-lg">
           <a href="#" aria-label="Facebook" className="hover:text-emerald-300 transition"><FaFacebookF /></a>
           <a href="#" aria-label="Instagram" className="hover:text-emerald-300 transition"><FaInstagram /></a>
-          <a href="#" aria-label="Twitter" className="hover:text-emerald-300 transition"><FaTwitter /></a>
-          <a href="#" aria-label="LinkedIn" className="hover:text-emerald-300 transition"><FaLinkedinIn /></a>
         </div>
       </div>
     </footer>

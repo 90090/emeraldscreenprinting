@@ -3,7 +3,12 @@ import { Instagram, Facebook, Youtube } from "lucide-react";
 
 export default function About() {
   return (
+    
     <section className="container mx-auto px-4 py-16 max-w-6xl space-y-20">
+      <head>
+       <title> About Emerald Screen Printing | Custom Apparel & Merchandise</title>
+       <meta name="description" content="Learn about Emerald Screen Printing, our story, and our commitment to quality apparel and promotional products. Proudly serving local businesses and organizations." />
+      </head>
       {/* Header Section */}
       <motion.div
         initial={{ x: -50, opacity: 0 }}
@@ -39,6 +44,7 @@ export default function About() {
           <div className="w-48 h-48 lg:w-80 lg:h-80 bg-gray-100 flex items-center justify-center shadow-md">
             <img
               src="./logo_color.png"
+              loading="lazy"
               alt="Emerald Screen Printing Logo"
               className="w-40 h-40 lg:w-75 lg:h-75 object-contain"
             />
@@ -72,6 +78,7 @@ export default function About() {
           <img
             src="./originalsign.jpg" 
             alt="Original Shop Sign"
+            loading="lazy"
             className="rounded-xl shadow-lg w-full object-cover"
           />
         </div>
@@ -147,6 +154,7 @@ export default function About() {
           <img
             src="./smiling.JPG"
             alt="Owner Smiling Making Shirts"
+            loading="lazy"
             className="rounded-xl shadow-lg object-cover w-full max-h-[600px]"
           />
         </div>
@@ -185,9 +193,6 @@ export default function About() {
           </a>
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500">
             <Facebook className="w-8 h-8" />
-          </a>
-          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500">
-            <Youtube className="w-8 h-8" />
           </a>
         </div>
       </motion.div>

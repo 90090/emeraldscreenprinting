@@ -2,14 +2,30 @@ import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import ShirtGrid from "../components/ShirtGrid";
 import Testimonials from "../components/Testimonials";
 
 export default function OurWork() {
 
+  const showcase = [
+    { img: "customers/ajplandscaping.jpg", caption: "AJP Landscaping" },
+    { img: "customers/guitar.jpg", caption: "Sweet Magic" },
+    { img: "customers/ges.jpg", caption: "Green Earth Solutions" },
+    { img: "customers/dynamictree2.jpg", caption: "Dynamic Tree Service" },
+    { img: "customers/dynamictrees.png", caption: "Dynamic Tree Service" },
+    { img: "customers/allinone2.jpg", caption: "All In One Powerwashing" },
+  ];
+
   return (
     <section className="w-full py-16">
+      <head>
+        <title> Our Work | Emerald Screen Printing | Custom Apparel & Merchandise</title>
+        <meta 
+          name="description" 
+          content="Emerald Screen Printing offers high-quality custom t-shirts, hoodies, and promotional items with fast turnaround and exceptional detail." 
+        />
+      </head>
       {/* Header */}
       <motion.div
         initial={{ y: -20, opacity: 0 }}
@@ -56,6 +72,7 @@ export default function OurWork() {
                 <img
                   src={supplier.logo}
                   alt={supplier.name}
+                  loading="lazy"
                   className="w-full h-20 object-contain"
                 />
               </a>
@@ -83,6 +100,52 @@ export default function OurWork() {
           Contact Us Today
         </a>
       </motion.div>
+      
+      <motion.section
+        className="py-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        
+      >
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-emerald-600 mb-6">
+            Our Amazing Customers Rocking Our Apparel
+          </h2>
+
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={1}
+            navigation
+            autoplay={{ delay: 6000, disableOnInteraction: false }}
+            loop={true} 
+            pagination={{ clickable: true }}
+            breakpoints={{
+              640: { slidesPerView: 2 }, // tablets
+              1024: { slidesPerView: 3 }, // desktops
+            }}
+            className="max-w-5xl mx-auto pb-20" 
+          >
+            {showcase.map((item, idx) => (
+              <SwiperSlide key={idx}>
+                <div className="relative rounded-2xl overflow-hidden shadow-md hover:scale-101 transition-transform duration-300">
+                  <img
+                    src={item.img}
+                    alt={item.caption}
+                    loading="lazy"
+                    className="w-full h-72 object-cover"
+                  />
+                  <div className="absolute bottom-0 left-0 w-full bg-black/50 text-white py-4 text-sm text-center">
+                    {item.caption}
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </motion.section>
+      
 
       <Testimonials />
     </section>

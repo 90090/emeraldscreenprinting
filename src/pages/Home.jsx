@@ -8,17 +8,18 @@ export default function Home() {
   const bannerImages = [
     { src: "shoppic1.JPG", alt: "Our Equipment" },
     { src: "shoppic5.jpeg", alt: "Custom Apparel" },
-    { src: "shoppic4.JPG", alt: "Happy Clients" },
+    { src: "shoppic2.jpg", alt: "Happy Clients" },
   ];
 
   const showcase = [
-    { img: "customers/dynamictree2.jpg", caption: "Dynamic Tree Service Crew" },
-    { img: "customers/allinone2.jpg", caption: "All In One Powerwashing" },
-    { img: "customers/dynamictrees.png", caption: "Dynamic Tree Service" },
-    { img: "customers/ajplandscaping.jpg", caption: "AJP Landscaping" },
-    { img: "customers/guitar.jpg", caption: "Sweet Magic" },
-    { img: "customers/ges.jpg", caption: "Green Earth Solutions" },
+    { img: "customers/dynamictree2.jpg", alt:"Dynamic Tree Service", caption: "Dynamic Tree Service" },
+    { img: "customers/allinone2.jpg", alt:"All In One Powerwashing", caption: "All In One Powerwashing" },
+    { img: "customers/dynamictrees.png", alt:"Dynamic Tree Service", caption: "Dynamic Tree Service" },
+    { img: "customers/ajplandscaping.jpg", alt:"AJP Landscaping", caption: "AJP Landscaping" },
+    { img: "customers/guitar.jpg", alt:"Sweet Magic", caption: "Sweet Magic" },
+    { img: "customers/ges.jpg", alt:"Green Earth Solutions", caption: "Green Earth Solutions" },
   ];
+  
   const clientLogos = [
   { name: "Adell Landscaping", src: "logos/adell.png" },
   { name: "Central CT Building and Remodeling", src: "logos/centralct.png" },
@@ -33,6 +34,10 @@ export default function Home() {
 
   return (
     <main className="space-y-16">
+      <head>
+       <title>Emerald Screen Printing Home | Custom Apparel & Merchandise</title>
+       <meta name="description" content="Emerald Screen Printing creates custom t-shirts, apparel, and promotional products with high-quality printing and embroidery. Serving businesses, schools, and events." />
+      </head>
       {/* Front Banner */}
       <section className="relative">
         <Swiper
@@ -48,6 +53,7 @@ export default function Home() {
                 <img
                   src={img.src}
                   alt={img.alt}
+                  loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center text-white p-4">
@@ -85,6 +91,7 @@ export default function Home() {
           <motion.img
             src="/logo_color.png"
             alt="Emerald Logo"
+            loading="lazy"
             className="w-70 mb-4 mx-auto"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -121,6 +128,7 @@ export default function Home() {
               <img
                 src={c.src}
                 alt={c.name}
+                loading="lazy"
                 className="max-h-16 md:max-h-19 md:max-w-45 max-w-32 object-contain"
               />
             </div>
@@ -134,7 +142,8 @@ export default function Home() {
             >
               <img
                 src={c.src}
-                alt=""
+                alt={`logo ${c.name}`}
+                loading="lazy"
                 className="max-h-16 md:max-h-12 max-w-[180px] object-contain"
               />
             </div>
@@ -171,6 +180,7 @@ export default function Home() {
                   <img
                     src={item.img}
                     alt={item.caption}
+                    loading="lazy"
                     className="w-full h-72 object-cover"
                   />
                   <div className="absolute bottom-0 left-0 w-full bg-black/50 text-white py-4 text-sm text-center">
