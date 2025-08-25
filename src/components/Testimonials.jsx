@@ -55,7 +55,7 @@ const testimonials = [
         className="py-8"
       >
         <div className="container mx-auto px-4">
-          <h3 className="text-xl md:text-2xl font-semibold text-center text-emerald-600 mb-10">
+          <h3 className="text-xl md:text-2xl font-semibold text-center text-emerald-700 mb-10">
             What Our Amazing Clients Have To Say
           </h3>
 
@@ -76,7 +76,7 @@ const testimonials = [
                 <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 md:p-10 shadow-sm transition-transform duration-300 hover:scale-[1.02] min-h-[200px] line-clamp-6 flex flex-col justify-between">
                   <p className="text-gray-800 text-lg md:text-xl italic leading-relaxed mb-6">“{t.text}”</p>
                   <div className="text-right">
-                    <p className="font-semibold text-emerald-600">— {t.name}</p>
+                    <p className="font-semibold text-emerald-700">— {t.name}</p>
                     {t.company && <p className="text-gray-600 text-sm">{t.company}</p>}
                   </div>
                 </div>

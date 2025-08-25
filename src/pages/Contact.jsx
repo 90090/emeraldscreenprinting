@@ -44,6 +44,9 @@ export default function Contact() {
         <p className="text-sm text-gray-600">
           You'll hear back from me within 1 - 3 hours. Let's make it happen.
         </p>
+        <p className="text-sm text-gray-600">
+          Call or Text me at 860-919-8449 
+        </p>
       </motion.div>
     </section>
   );

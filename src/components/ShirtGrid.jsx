@@ -10,13 +10,16 @@ const screenshots = [
   { src: "./samples/shirt3.png", alt: ""},
   { src: "./samples/shirt4.png", alt: ""},
   { src: "./samples/shirt5.png", alt: ""},
+  { src: "./samples/shirt15.png", alt: ""},
   { src: "./samples/shirt6.png", alt: ""},
   { src: "./samples/shirt7.png", alt: ""},
   { src: "./samples/shirt8.png", alt: ""},
   { src: "./samples/shirt9.png", alt: ""},
+  { src: "./samples/shirt14.webp", alt: ""},
   { src: "./samples/shirt10.png", alt: ""},
   { src: "./samples/shirt11.png", alt: ""},
   { src: "./samples/shirt12.png", alt: ""},
+  { src: "./samples/shirt13.webp", alt: ""},
 ];
 
 export default function ShirtGrid() {
@@ -39,7 +42,7 @@ export default function ShirtGrid() {
 
   return (
     <section id="our-work" className="py-10 text-black text-center px-4">
-      <h2 className="text-3xl font-bold text-emerald-600 mb-6">
+      <h2 className="text-3xl font-bold text-emerald-700 mb-6">
         Our Apparel
       </h2>
 
@@ -48,7 +51,7 @@ export default function ShirtGrid() {
         spaceBetween={20}
         slidesPerView={1}
         navigation
-        autoplay={{ delay: 6000, disableOnInteraction: false }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop={true}
         pagination={{ clickable: true }}
         breakpoints={{
@@ -58,7 +61,7 @@ export default function ShirtGrid() {
           1024: { slidesPerView: 4, spaceBetween: 20 },
           1280: { slidesPerView: 5, spaceBetween: 20 },
         }}
-        onSwiper={(swiper) => (swiperRef.current = swiper)} // capture Swiper instance
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
       >
         {screenshots.map((img, i) => (
           <SwiperSlide key={i}>

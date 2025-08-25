@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Testimonials from "../components/Testimonials";
+import ClientMarquee from "../components/ClientMarquee";
 
 export default function Home() {
   const bannerImages = [
@@ -56,9 +57,9 @@ export default function Home() {
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center text-white p-4">
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
                   <motion.h1
-                    className="text-4xl md:text-5xl font-extrabold text-emerald-400"
+                    className="text-4xl md:text-5xl font-extrabold text-emerald-700 text-shadow-lg drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)]"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.9 }}
@@ -82,7 +83,6 @@ export default function Home() {
 
       {/* Mission + Slogan */}
       <motion.section
-        className="bg-gray-50"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -97,7 +97,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           />
-          <h2 className="text-3xl font-semibold text-emerald-600">
+          <h2 className="text-3xl font-semibold text-emerald-700">
             Your Local Screen Printing Partner
           </h2>
           <p className="mb-10 text-lg text-gray-700 max-w-2xl mx-auto">
@@ -113,43 +113,7 @@ export default function Home() {
       </motion.section>
 
       {/* Client List */}
-      <div className="relative overflow-hidden py-2">
-        <h3 className="text-2xl text-center font-bold mb-10 text-emerald-600">
-          Trusted By Many Connecticut Brands
-        </h3>
-        <div className="flex w-max gap-12 animate-marquee hover:md:animation-paused">
-          {/* one set */}
-          {clientLogos.map((c) => (
-            <div
-              key={c.name}
-              className="flex items-center justify-center w-38 h-17 md:w-50 md:h-20 bg-white rounded-xl shadow transition-transform duration-300 hover:scale-110"
-              title={c.name}
-            >
-              <img
-                src={c.src}
-                alt={c.name}
-                loading="lazy"
-                className="max-h-16 md:max-h-19 md:max-w-45 max-w-32 object-contain"
-              />
-            </div>
-          ))}
-          {/* duplicate set */}
-          {clientLogos.map((c, i) => (
-            <div
-              key={`${c.name}-dup-${i}`}
-              className="flex items-center justify-center w-32 h-14 md:w-50 md:h-20 bg-white rounded-xl shadow transition-transform duration-300 hover:scale-110"
-              aria-hidden="true"
-            >
-              <img
-                src={c.src}
-                alt={`logo ${c.name}`}
-                loading="lazy"
-                className="max-h-16 md:max-h-12 max-w-[180px] object-contain"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+      <ClientMarquee clientLogos={clientLogos} />
 
       {/* Apparel Showcase */}
       <motion.section
@@ -183,7 +147,7 @@ export default function Home() {
                     loading="lazy"
                     className="w-full h-72 object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 w-full bg-black/50 text-white py-4 text-sm text-center">
+                  <div className="absolute bottom-0 left-0 w-full text-white py-4 text-sm text-center">
                     {item.caption}
                   </div>
                 </div>

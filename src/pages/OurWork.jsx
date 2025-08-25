@@ -89,7 +89,7 @@ export default function OurWork() {
         transition={{ duration: 0.5 }}
         className="text-center space-y-4"
       >
-        <h3 className="text-2xl font-bold text-emerald-600">How to Start?</h3>
+        <h3 className="text-2xl font-bold text-emerald-700">How to Start?</h3>
         <p className="text-gray-600 text-xl max-w-2xl mx-auto">
           Have questions or want to place an order - reach out for a quick quote.
         </p>
@@ -109,7 +109,7 @@ export default function OurWork() {
         
       >
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-emerald-600 mb-6">
+          <h2 className="text-3xl font-bold text-center text-emerald-700 mb-6">
             Our Amazing Customers Rocking Our Apparel
           </h2>
 

@@ -24,15 +24,28 @@ export default function Navbar() {
         <Link
           to="/"
           onClick={close}
-          className="flex items-center space-x-2 z-10"
+          className="flex flex-row items-center space-x-2 z-10"
         >
-          <img src="/logo_black.png" alt="Emerald Logo" className="h-12 w-15" />
-          <span className="text-xl font-semibold text-emerald-400">Emerald</span>
-          <span className="text-lg text-white font-medium">Screen Printing</span>
-        </Link>
+          {/* Logo */}
+          <img
+            src="/logo-allwhite.png"
+            alt="Emerald Logo"
+            className="w-18 md:w-22"
+          />
 
-        {/* Centered Links - Desktop (1024px and above) */}
-        <div className="hidden lg:flex space-x-10 absolute inset-0 justify-center items-center">
+          {/* Text */}
+          <div className="flex flex-col text-left">
+            <span className="text-sm sm:text-base md:text-lg font-semibold text-emerald-400">
+              Emerald
+            </span>
+            <span className="text-[15px] sm:text-xs md:text-sm lg:text-base text-white font-medium leading-tight">
+              Screen Printing &amp; Embroidery
+            </span>
+          </div>
+        </Link>
+        
+        {/* Centered Links - Desktop (XL and up only) */}
+        <div className="hidden xl:flex space-x-10 absolute inset-0 justify-center items-center">
           {links.map(({ name, to }) => {
             const isActive = location.pathname === to;
             return (
@@ -56,10 +69,10 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Hamburger - Mobile (1023px and below) */}
+        {/* Hamburger - Mobile & Tablet (below XL) */}
         <button
           onClick={toggle}
-          className="lg:hidden p-2 text-2xl text-white focus:outline-none z-10"
+          className="xl:hidden p-2 text-2xl text-white focus:outline-none z-10"
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
@@ -70,7 +83,7 @@ export default function Navbar() {
         initial={{ height: 0, opacity: 0 }}
         animate={isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
         transition={{ duration: 0.3 }}
-        className="overflow-hidden bg-emerald-700 lg:hidden"
+        className="overflow-hidden bg-emerald-700 xl:hidden"
       >
         <div className="flex flex-col items-center px-4 py-4 space-y-4 text-lg font-semibold">
           {links.map(({ name, to }) => {

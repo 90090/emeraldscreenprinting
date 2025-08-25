@@ -4,53 +4,70 @@ import { Instagram, Facebook, Youtube } from "lucide-react";
 export default function About() {
   return (
     
-    <section className="container mx-auto px-4 py-16 max-w-6xl space-y-20">
+    <section className="container mx-auto px-4 py-8 max-w-6xl space-y-20">
       <head>
        <title> About Emerald Screen Printing | Custom Apparel & Merchandise</title>
        <meta name="description" content="Learn about Emerald Screen Printing, our story, and our commitment to quality apparel and promotional products. Proudly serving local businesses and organizations." />
       </head>
       {/* Header Section */}
       <motion.div
-        initial={{ x: -50, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="grid lg:grid-cols-2 gap-8 items-center"
+        className="space-y-8"
       >
-        {/* Text */}
-        <div>
-          <h1 className="text-5xl font-extrabold text-emerald-700 mb-4">
-            More Than Ink. <br /> <span className="text-black">It's Personal.</span>
-          </h1>
-          <p className="text-lg text-gray-600">
-            At Emerald Screen Printing & Embroidery, we blend the precision of a professional print shop with the
-            personal touch of a hands-on craftsman. Our standards are sky-high, our equipment is
-            top-tier, and our reputation is built on quality and trust.
-          </p>
-          <p className="text-lg text-gray-600 mt-4">
-            We specialize in custom screen printing for apparel such as T-shirts, hoodies, caps
-            and more. Offering creative support and a seamless ordering experience from start to
-            finish, whether you're a small business, school, organization, or someone with a big
-            idea, we print every item like it's our own.
-          </p>
-        </div>
+        
 
-        {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex justify-center lg:justify-end"
-        >
-          <div className="w-48 h-48 lg:w-80 lg:h-80 bg-gray-100 flex items-center justify-center shadow-md">
+        {/* Text + Shop Photo */}
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
+          {/* Text */}
+          <motion.div
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+        
+            <h1 className="text-5xl font-extrabold text-emerald-700 mb-4">
+              More Than Ink. <br /> <span className="text-black">It's Personal.</span>
+            </h1>
+            <div className="flex justify-center">
+              <img
+                src="./logo_color.png"
+                loading="lazy"
+                alt="Emerald Screen Printing Logo"
+                className="w-20 h-20 lg:w-40 lg:h-40 object-contain"
+              />
+            </div>
+            <p className="text-lg text-gray-600">
+              At Emerald Screen Printing & Embroidery, we blend the precision of a professional print shop with the
+              personal touch of a hands-on craftsman. Our standards are sky-high, our equipment is
+              top-tier, and our reputation is built on quality and trust.
+            </p>
+            <p className="text-lg text-gray-600 mt-4">
+              We specialize in custom screen printing for apparel such as T-shirts, hoodies, caps
+              and more. Offering creative support and a seamless ordering experience from start to
+              finish, whether you're a small business, school, organization, or someone with a big
+              idea, we print every item like it's our own.
+            </p>
+          </motion.div>
+
+          {/* Shop Photo */}
+          <motion.div
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex justify-center"
+          >
             <img
-              src="./logo_color.png"
+              src="./jeff2.jpeg"
               loading="lazy"
-              alt="Emerald Screen Printing Logo"
-              className="w-40 h-40 lg:w-75 lg:h-75 object-contain"
+              alt="Emerald Screen Printing Shop"
+              className="w-full max-w-md rounded-xl shadow-lg object-cover"
             />
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </motion.div>
+
 
       {/* Local Business Section */}
       <motion.div
@@ -59,7 +76,7 @@ export default function About() {
         transition={{ duration: 0.6 }}
         className="text-center"
       >
-        <h2 className="text-3xl font-bold text-emerald-600 mb-4">Proudly Local</h2>
+        <h2 className="text-3xl font-bold text-emerald-700 mb-4">Proudly Local</h2>
         <p className="text-lg text-gray-700 max-w-3xl mx-auto">
           Emerald Screen Printing is a family-owned local business, deeply rooted in the Farmington community. We take pride
           in treating every order with the same care and attention we'd want ourselves because for us, it's not just printing.
@@ -97,7 +114,7 @@ export default function About() {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl font-bold text-emerald-600 mb-4">Our History</h2>
+        <h2 className="text-3xl font-bold text-emerald-700 mb-4">Our History</h2>
         <div className="space-y-4 text-gray-700">
           <p>
             The journey began back in 1989 with Jeff Elmer's first company, called Home Plate Sports,
@@ -167,7 +184,7 @@ export default function About() {
         transition={{ duration: 0.8 }}
         className="space-y-4 text-center"
       >
-        <h2 className="text-3xl font-bold text-emerald-600">See Us in Action</h2>
+        <h2 className="text-3xl font-bold text-emerald-700">See Us in Action</h2>
         <div className="max-w-[400px] mx-auto aspect-[9/16] overflow-hidden rounded-xl shadow-lg">
           <video
             src="action.MOV"
@@ -185,13 +202,13 @@ export default function About() {
         transition={{ duration: 0.6 }}
         className="text-center space-y-4"
       >
-        <h2 className="text-2xl font-bold text-emerald-600">Follow Us Behind the Scenes</h2>
+        <h2 className="text-2xl font-bold text-emerald-700">Follow Us Behind the Scenes</h2>
         <p className="text-gray-600">See what's hot off the press:</p>
         <div className="flex justify-center space-x-6 text-emerald-700">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-700">
             <Instagram className="w-8 h-8" />
           </a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-500">
+          <a href="https://www.facebook.com/emeraldsp17/" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-700">
             <Facebook className="w-8 h-8" />
           </a>
         </div>
