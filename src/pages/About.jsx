@@ -35,7 +35,7 @@ export default function About() {
                 src="./logo_color.png"
                 loading="lazy"
                 alt="Emerald Screen Printing Logo"
-                className="w-20 h-20 lg:w-40 lg:h-40 object-contain"
+                className="w-40 h-40 object-contain"
               />
             </div>
             <p className="text-lg text-gray-600">
@@ -123,7 +123,7 @@ export default function About() {
             Jeff made a pivotal decision to build more and buy the equipment and print in-house.
           </p>
           <p>
-            Newly relocated to Farmington, a backyard shed became the birthplace of a full-fledged print
+            While living in Southington, a backyard shed became the birthplace of a full-fledged print
             operation. While working full-time at ESPN during the night shift (4 PM–12 AM), daytime hours
             were spent printing orders and building a loyal customer base.
           </p>
@@ -134,8 +134,7 @@ export default function About() {
           </p>
           <p>
             Balancing a full-time job at ESPN with running a busy screen-printing shop was no small task,
-            and in 2000, the business was sold. But the passion never left. After a few years off and a
-            few life changes the spark reignited and in 2003, a new partnership was formed with a
+            and in 2000, the business was sold. But the passion never left. After a few years off and moving to Farmington in 2003, a new partnership was formed with a
             longtime ESPN colleague, running strong for six more years.
           </p>
           <p>

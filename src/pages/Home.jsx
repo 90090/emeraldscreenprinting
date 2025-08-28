@@ -5,20 +5,33 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Testimonials from "../components/Testimonials";
 import ClientMarquee from "../components/ClientMarquee";
 
+
+
 export default function Home() {
-  const bannerImages = [
-    { src: "shoppic1.JPG", alt: "Our Equipment" },
-    { src: "shoppic5.jpeg", alt: "Custom Apparel" },
-    { src: "shoppic2.jpg", alt: "Happy Clients" },
-  ];
+const bannerImages = [
+    { src: "banner/shoppic1.JPG", alt: "Our Equipment" },
+  {
+    group: [
+      { src: "banner/leftbanner.JPG", alt: "Jeff making shirts" },
+      { src: "banner/middlebanner.JPG", alt: "Jeff making shirts again" },
+      { src: "banner/rightbanner.JPG", alt: "Jeff making shirts again!" },
+    ],
+  },
+    { src: "banner/shoppic2.jpg", alt: "Happy Clients" },
+    { src: "banner/shoppic3.JPG", alt: "Happy Clients" },
+];
+
 
   const showcase = [
     { img: "customers/dynamictree2.jpg", alt:"Dynamic Tree Service", caption: "Dynamic Tree Service" },
     { img: "customers/allinone2.jpg", alt:"All In One Powerwashing", caption: "All In One Powerwashing" },
     { img: "customers/dynamictrees.png", alt:"Dynamic Tree Service", caption: "Dynamic Tree Service" },
     { img: "customers/ajplandscaping.jpg", alt:"AJP Landscaping", caption: "AJP Landscaping" },
+    { img: "customers/VSsons.png", caption: "VS Sons" },
     { img: "customers/guitar.jpg", alt:"Sweet Magic", caption: "Sweet Magic" },
     { img: "customers/ges.jpg", alt:"Green Earth Solutions", caption: "Green Earth Solutions" },
+    { img: "customers/fish.png", caption: "Premium Fencing and Masonry" },
+    { img: "customers/Adell.png", caption: "Adell Landscaping" },
   ];
   
   const clientLogos = [
@@ -43,23 +56,43 @@ export default function Home() {
       <section className="relative">
         <Swiper
           modules={[Autoplay, Pagination]}
-          autoplay={{ delay: 6000, disableOnInteraction: false }}
+          autoplay={{ delay: 6500, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           loop={true}
           className="h-[500px]"
         >
           {bannerImages.map((img, idx) => (
             <SwiperSlide key={idx}>
-              <div className="relative h-[500px]">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
+              <div className="relative h-[500px] flex">
+                {/* Second slide shows 2 images on mobile, 3 on md+ */}
+                {idx === 1 ? (
+                  <div className="absolute inset-0 flex flex-row w-full h-full">
+                    {img.group.map((g, gIdx) => (
+                      <img
+                        key={gIdx}
+                        src={g.src}
+                        alt={g.alt}
+                        loading="lazy"
+                        className={`
+                          h-full object-cover 
+                          ${gIdx > 1 ? "hidden md:block w-1/3" : "w-1/2 md:w-1/3"}
+                        `}
+                      />
+                    ))}
+                  </div>
+                ) 
+                : (
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                )}
+                {/* Overlay text (still centered regardless of layout) */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-4">
                   <motion.h1
-                    className="text-4xl md:text-5xl font-extrabold text-emerald-700 text-shadow-lg drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)]"
+                    className="text-4xl md:text-5xl font-extrabold text-[rgb(208,177,65)] text-shadow-lg drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)]"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.9 }}
@@ -67,7 +100,7 @@ export default function Home() {
                     Screen Printing That Hits Different.
                   </motion.h1>
                   <motion.p
-                    className="mt-4 text-lg md:text-xl max-w-xl"
+                    className="mt-4 text-lg md:text-xl max-w-xl text-shadow-lg drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)]"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.9 }}
@@ -81,6 +114,7 @@ export default function Home() {
         </Swiper>
       </section>
 
+
       {/* Mission + Slogan */}
       <motion.section
         initial={{ opacity: 0, y: 30 }}
@@ -92,7 +126,7 @@ export default function Home() {
             src="/logo_color.png"
             alt="Emerald Logo"
             loading="lazy"
-            className="w-70 mb-4 mx-auto"
+            className="w-110 mb-4 mx-auto"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -147,8 +181,8 @@ export default function Home() {
                     loading="lazy"
                     className="w-full h-72 object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 w-full text-white py-4 text-sm text-center">
-                    {item.caption}
+                  <div className="absolute bottom-0 left-0 w-full text-white py-4 text-sm text-center drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)]">
+                    <p className="">{item.caption}</p>
                   </div>
                 </div>
               </SwiperSlide>

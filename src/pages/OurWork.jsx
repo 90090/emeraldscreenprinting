@@ -12,9 +12,12 @@ export default function OurWork() {
     { img: "customers/ajplandscaping.jpg", caption: "AJP Landscaping" },
     { img: "customers/guitar.jpg", caption: "Sweet Magic" },
     { img: "customers/ges.jpg", caption: "Green Earth Solutions" },
+    { img: "customers/VSsons.png", caption: "VS Sons" },
     { img: "customers/dynamictree2.jpg", caption: "Dynamic Tree Service" },
     { img: "customers/dynamictrees.png", caption: "Dynamic Tree Service" },
     { img: "customers/allinone2.jpg", caption: "All In One Powerwashing" },
+    { img: "customers/fish.png", caption: "Premium Fencing and Masonry" },
+    { img: "customers/Adell.png", caption: "Adell Landscaping" },
   ];
 
   return (
@@ -136,8 +139,8 @@ export default function OurWork() {
                     loading="lazy"
                     className="w-full h-72 object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 w-full bg-black/50 text-white py-4 text-sm text-center">
-                    {item.caption}
+                  <div className="absolute bottom-0 left-0 w-full text-white py-4 text-sm text-center drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)]">
+                    <p className="">{item.caption}</p>
                   </div>
                 </div>
               </SwiperSlide>
