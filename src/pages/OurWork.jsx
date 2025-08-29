@@ -13,10 +13,11 @@ export default function OurWork() {
     { img: "customers/guitar.jpg", caption: "Sweet Magic" },
     { img: "customers/ges.jpg", caption: "Green Earth Solutions" },
     { img: "customers/VSsons.png", caption: "VS Sons" },
-    { img: "customers/dynamictree2.jpg", caption: "Dynamic Tree Service" },
     { img: "customers/dynamictrees.png", caption: "Dynamic Tree Service" },
     { img: "customers/allinone2.jpg", caption: "All In One Powerwashing" },
     { img: "customers/fish.png", caption: "Premium Fencing and Masonry" },
+    { img: "customers/farmington.png", caption: "Farmington Football" },
+    { img: "customers/dynamictree2.jpg", caption: "Dynamic Tree Service" },
     { img: "customers/Adell.png", caption: "Adell Landscaping" },
   ];
 

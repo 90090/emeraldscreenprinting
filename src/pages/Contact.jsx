@@ -16,7 +16,7 @@ export default function Contact() {
         className="text-center space-y-4"
       >
         <h2 className="text-4xl font-bold text-emerald-700">
-          Let's Create Something Together.
+          Stand Out With Emerald Screen Printing
         </h2>
         <p className="text-gray-700 max-w-xl mx-auto">
           Have a project in mind? Let us know what you're envisioning, we're ready to help bring
