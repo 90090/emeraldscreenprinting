@@ -67,7 +67,7 @@ const testimonials = [
               renderBullet: (i, className) =>
                 `<span class="${className} bg-emerald-600"></span>`,
             }}
-            autoplay={{ delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true }}
+            autoplay={{ delay: 12000, disableOnInteraction: false, pauseOnMouseEnter: true }}
             loop={true}
             className="max-w-4xl mx-auto"
           >

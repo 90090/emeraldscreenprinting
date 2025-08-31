@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
@@ -97,12 +98,12 @@ export default function OurWork() {
         <p className="text-gray-600 text-xl max-w-2xl mx-auto">
           Have questions or want to place an order - reach out for a quick quote.
         </p>
-        <a
-          href="/contact"
+        <Link
+          to="/contact"
           className="inline-block px-10 py-5 bg-emerald-700 text-white text-2xl font-semibold rounded-lg shadow hover:bg-emerald-600 transition transform hover:scale-105"
         >
           Contact Us Today
-        </a>
+        </Link>
       </motion.div>
       
       <motion.section
