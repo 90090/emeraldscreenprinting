@@ -21,7 +21,7 @@ export default function Footer() {
         
         <div className="flex space-x-4 text-lg">
           <a 
-            href="https://www.facebook.com/emeraldsp17/" 
+            href="https://www.facebook.com/emeraldscreenprintingandembroidery" 
             target="_blank" 
             rel="noopener noreferrer" 
             aria-label="Facebook" 
@@ -30,7 +30,7 @@ export default function Footer() {
             <FaFacebookF />
           </a>
           <a 
-            href="#" 
+            href="https://www.instagram.com/emeraldscreenprintingct/" 
             aria-label="Instagram" 
             target="_blank" 
             rel="noopener noreferrer" 

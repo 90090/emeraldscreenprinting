@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Instagram, Facebook, Youtube } from "lucide-react";
+import AboutVideo from "../components/AboutVideo";
 
 export default function About() {
   return (
@@ -68,6 +69,8 @@ export default function About() {
         </div>
       </motion.div>
 
+      {/* Video Section - Portrait fix */}
+      <AboutVideo />
 
       {/* Local Business Section */}
       <motion.div
@@ -176,24 +179,6 @@ export default function About() {
         </div>
       </motion.div>
 
-      {/* Video Section - Portrait fix */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="space-y-4 text-center"
-      >
-        <h2 className="text-3xl font-bold text-emerald-700">See Us in Action</h2>
-        <div className="max-w-[400px] mx-auto aspect-[9/16] overflow-hidden rounded-xl shadow-lg">
-          <video
-            src="action.MOV"
-            controls
-            playsInline
-            className="w-full h-full object-cover rounded-xl"
-          />
-        </div>
-      </motion.div>
-
       {/* Social Media */}
       <motion.div
         initial={{ y: 30, opacity: 0 }}
@@ -204,10 +189,10 @@ export default function About() {
         <h2 className="text-2xl font-bold text-emerald-700">Follow Us Behind the Scenes</h2>
         <p className="text-gray-600">See what's hot off the press:</p>
         <div className="flex justify-center space-x-6 text-emerald-700">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-700">
+          <a href="https://www.instagram.com/emeraldscreenprintingct/" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-700">
             <Instagram className="w-8 h-8" />
           </a>
-          <a href="https://www.facebook.com/emeraldsp17/" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-700">
+          <a href="https://www.facebook.com/emeraldscreenprintingandembroidery" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-700">
             <Facebook className="w-8 h-8" />
           </a>
         </div>
