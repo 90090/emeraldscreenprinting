@@ -4,7 +4,7 @@ export default function ClientList({ clientLogos }) {
 
     
   return (
-    <div className="relative overflow-hidden py-8">
+    <div className="relative overflow-hidden py-3">
       <h3 className="text-2xl text-center font-bold mb-10 text-emerald-700">
         Trusted By Many Connecticut Brands
       </h3>

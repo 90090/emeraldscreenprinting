@@ -49,7 +49,7 @@ const bannerImages = [
 
 
   return (
-    <main className="space-y-16">
+    <main className="space-y-10">
       <head>
        <title>Emerald Screen Printing Home | Custom Apparel & Merchandise</title>
        <meta name="description" content="Emerald Screen Printing creates custom t-shirts, apparel, and promotional products with high-quality printing and embroidery. Serving businesses, schools, and events." />
@@ -161,6 +161,40 @@ const bannerImages = [
 
       {/* Client List */}
       <ClientMarquee clientLogos={clientLogos} />
+
+      <div className="flex justify-center p-6">
+      <div className="max-w-3xl w-full bg-white shadow-lg rounded-2xl p-4 text-emerald-700 hover:scale-105 duration-300 shadow-md hover:shadow-lg flex flex-col">
+        
+        {/* Title */}
+        <h2 className="text-xl font-bold mb-4 text-center">Apparel Pricing Starts At:</h2>
+
+        {/* Two Columns */}
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between">
+          {/* Left Side */}
+          <div className="md:w-1/2">
+            <ul className="space-y-2 text-sm">
+              <li><span className="font-semibold">Tees:</span> $8+ each</li>
+              <li><span className="font-semibold">Hoods:</span> $20 each</li>
+              <li><span className="font-semibold">Long Sleeve:</span> $17 each</li>
+            </ul>
+          </div>
+
+          {/* Right Side */}
+          <div className="md:w-1/2 md:pl-6 mt-4 md:mt-0 pt-3 md:pt-0 text-sm text-emerald-700">
+            <ul className="space-y-2">
+              <li><span className="font-semibold">Dri-Fit SS:</span> $12 each</li>
+              <li><span className="font-semibold">Dri-Fit LS:</span> $16 each</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Add-ons Row */}
+        <div className="mt-4 pt-3 border-t text-sm text-emerald-600 text-center md:text-left">
+          <p><span className="font-semibold">Add-ons:</span> 2X +$2, 3X +$4, 4–6X +$5</p>
+        </div>
+      </div>
+    </div>
+
 
       {/* Apparel Showcase */}
       <motion.section
