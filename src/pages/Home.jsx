@@ -176,7 +176,6 @@ const bannerImages = [
               <li><span className="font-semibold">Tees:</span> $8+ each</li>
               <li><span className="font-semibold">Long Sleeve Tees:</span> $17 each</li>
               <li><span className="font-semibold">Hoods:</span> $20 each</li>
-              
             </ul>
           </div>
 
